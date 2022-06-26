@@ -21,20 +21,28 @@
         z-index: 10;
         background-color: $neutral-white;
         .main-menu{
-          text-align: center;
+          /* display: flex; */
+          /* text-align: center; */
           margin-bottom: 1em 0;
+          
+          &__item{
+            display: flex;
+            margin: 2em 0;
+            height: 3em;
+            width: 10em;
+            &:hover{
+              cursor: pointer;
+              color: $neutral-white;
+              .main-menu__link{
+                border-bottom: 3px solid $neutral-black;
+              }
+            }
+          }
           &__link{
             color: $grey-900;
-            display: block;
-            width: 6em;
-            height: 2em;
-            margin: 2em 0;
-            border-radius: 6px;
-            transition: all .5s;
-            &:hover{
-              color: $neutral-white;
-              background-color: $green-900;
-            }
+            width: 80%;
+            margin: auto;
+            transition: all .2s;
           }
           &__button{
             width: 50%;
@@ -46,14 +54,22 @@
         display: flex;
         .div-container{
           cursor: pointer;
-          width: 2.5em; // 40px 
-          height: 2.5em; // 40px
+          width: 2.5em; 
+          height: 2.5em; 
           display: grid;
           align-content: center;
           justify-content: center;
           border-radius: 50%;
           position: relative;
-          left: -0.8em; // -12.8px
+          left: -0.8em;
+          transition: all .5s;
+          &:hover{
+            background-color: $grey-700;
+            path {
+              fill: $neutral-white;
+              stroke: $neutral-white;
+            }
+          }
         }
         .div-icon{
           height: 1em; // 16px
