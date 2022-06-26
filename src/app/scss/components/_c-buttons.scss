@@ -1,0 +1,44 @@
+.c-button{
+  cursor: pointer;
+  color: $neutral-black;
+  text-align: center;
+  padding: 0.857em 2.57em;
+  background-color: $neutral-white;
+  border: 0.8px solid $grey-700;
+  border-radius: 10px;
+  box-sizing: border-box;
+  &--hover{
+
+  }
+  &--whatsapp{
+    
+  }
+}
+.c-button-right{
+
+  &--hover{
+
+  }
+}
+
+.c-input-text-icon{
+  position: relative;
+  input{
+    width: 100%;
+    border: 0.8px solid $grey-900;
+    border-radius: 6px;
+    outline: none;
+    padding: 1em 0.5em;
+    @include a-set($f2-small);
+    &::placeholder{
+      color: $grey-200;
+    }
+  }
+  div{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    right: 2%;
+    top: 28%;
+  }
+}

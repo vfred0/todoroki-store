@@ -1,0 +1,161 @@
+.c-header{
+  background-color: $neutral-white;
+  height: 3.125em; //50px
+  padding: 0 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  .l-container{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    position: relative;
+    &__flex{
+      &--menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: -100vw;
+        z-index: 10;
+        background-color: $neutral-white;
+        .main-menu{
+          text-align: center;
+          margin-bottom: 1em 0;
+          &__link{
+            color: $grey-900;
+            display: block;
+            width: 6em;
+            height: 2em;
+            margin: 2em 0;
+            border-radius: 6px;
+            transition: all .5s;
+            &:hover{
+              color: $neutral-white;
+              background-color: $green-900;
+            }
+          }
+          &__button{
+            width: 50%;
+          }
+        }
+      }
+      &--toggle{
+        align-items: center;
+        display: flex;
+        .div-container{
+          cursor: pointer;
+          width: 2.5em; // 40px 
+          height: 2.5em; // 40px
+          display: grid;
+          align-content: center;
+          justify-content: center;
+          border-radius: 50%;
+          position: relative;
+          left: -0.8em; // -12.8px
+        }
+        .div-icon{
+          height: 1em; // 16px
+          width: 1em; // 16px
+        } 
+      }
+      &--logo{
+        flex-grow: 2;
+        .div-icon{
+          background: url('../../../images/Logo2.jpg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          height: 3.125em; /* $height-header; */
+          width: 50px; /* $height-header; */
+          position: absolute;
+          left: 50%;
+          margin-left: -1.5625em; // width/2 
+          top: 50%;
+          margin-top: -1.5625em; // height/2
+        }   
+      }
+      &--icons{
+        flex-grow: 1;
+        .div-icons{
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          height: 100%;
+          &__flex{
+            cursor: pointer;
+            box-sizing: content-box;
+            min-height: 21px;
+            min-width: 21px;
+            height: 1.1em; // 32px
+            width: 1.1em; // 32px
+            padding: 0.2em; // 6.4px
+            margin: 0.3em 2%; // 8px 4.8px
+            &--cart{
+              position: relative;
+              .container-circle{
+                width: 60%;
+                height: 60%;
+                border-radius: 50%;
+                background-color: $red-300;
+                position: absolute;
+                right: -15%;
+                top: -7%;
+                display: flex;
+                .container-count{
+                  margin: auto;
+                  color: $neutral-white;
+                  font-weight: bolder;
+                  font-size: 0.7em;
+                  font-family: $font-a;
+                }
+              }
+            }
+          }
+          
+        }
+      }
+    }
+  }
+  .search-fixed{
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    background-color: $neutral-white;
+    transition: all .5s;
+    visibility: hidden;
+    .content{
+      width: 95%;
+      margin: 0.57em auto;
+      height: 5.75em; 
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+      &__text{ color: $grey-900; }
+    }
+  }
+  .is-active-td{
+    visibility: visible;
+    top: 0;
+  }
+  .is-active-lr{
+    visibility: visible;
+    left: 0;
+  }
+  @media screen and (min-width: 544px){
+    font-size: 1.4rem; // 22.4px
+    .container-count{
+      font-size: 0.6em !important;/* 0.518em; */
+    }
+  }
+  @media screen and (min-width: $screen-tablet-sm){
+
+  }
+}
