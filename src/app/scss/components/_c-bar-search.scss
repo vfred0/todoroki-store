@@ -1,0 +1,21 @@
+.c-bar-search{
+  display: flex;
+  border-radius: 6px;
+  border: 0.8px solid $grey-900;
+  padding: em(16) em(8);
+  align-items: center;
+  justify-content: space-between;
+  &__input{
+    outline: none;
+    @include a-set($f2-small);
+    &::placeholder{
+      color: $grey-200;
+    }
+  }
+  &__icon{
+    width: 20px;
+    height: 20px;
+    right: 2%;
+    top: 28%;
+  }
+}
