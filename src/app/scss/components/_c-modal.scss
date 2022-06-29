@@ -1,34 +1,87 @@
-.c-modal {
-  height: 100%;
-  width: 60vmin;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
-  background-color: $neutral-white;
+.c-modal{
   display: none;
+  background-color: $neutral-white;
+  height: 100%;
+  &--toggle {
+    width: 60vmin;
+    flex-direction: column;
+    align-items: center; 
+    gap: 16px;
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  &__menu {
-    display: flex;
+    &.is-active {
+      display: flex;
+      position: fixed;
+      top: 0;
+      z-index: $z-modal;
+    }
+  }
+  &--search{
+    width: 100%;
+    padding: em(8);
     flex-direction: column;
     align-items: center;
-    gap: em(12);
-    &-link {
-      color: $grey-900;
-      font-weight: 500;
+    gap: em(24);
+    &__content{
+      width: 100%;
+      display: grid;
+      gap: em(12);
     }
-    padding-top: em(18);
+    &.is-active {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: $z-modal;
+    }
   }
 
-  &__buttons {
-    display: flex;
-    padding: em(16);
-  }
-
-  &.is-active {
-    display: flex;
-    position: fixed;
-    top: 0;
-    z-index: $z-modal;
+  &--shop{
+    width: rem(450);
+    max-width: 90%;
+    &__head{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: em(26) em(24);
+    }
+    &__title{
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $neutral-black;
+    }
+    &__icon{
+      fill: $neutral-black;
+    }
+    &__body{
+      padding: 0 em(24);
+      display: grid;
+      gap: em(10);
+      justify-items: center;
+      text-align: center;
+    }
+    &__image{
+      width: 80%;
+      height: auto;
+    }
+    &__subtitle{
+      color: $neutral-black;
+    }
+    &__paragraph{
+      color: $grey-600;
+      margin-bottom: em(10);
+    }
+    &.is-active {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: $z-modal;
+    }
   }
 }

@@ -25,7 +25,8 @@
       </a>
     </li>
     <div class="c-header__menu-right">
-      <li class="c-header__menu-item">
+      <li class="c-header__menu-item"
+      (click)="onSearch($event)">
         <a class="c-header__menu-link" href="">
           <svg-icon
             src="/assets/icons/search.svg"
@@ -34,7 +35,8 @@
           </svg-icon>
         </a>
       </li>
-      <li class="c-header__menu-item">
+      <li class="c-header__menu-item"
+      (click)="onShop($event)">
         <a class="c-header__menu-link" href="">
           <svg-icon
             src="/assets/icons/cart.svg"
@@ -47,18 +49,50 @@
   </ul>
 </div>
 
-<div class="c-modal {{ activeModal }}">
-  <ul class="c-modal__menu">
-    <li class="c-modal__menu-item">
-      <a class="c-modal__menu-link o-font-f1-main" href="">Inicio</a>
+<div class="c-modal c-modal--toggle {{ activeModalToggle }}">
+  <ul class="c-modal--toggle__menu">
+    <li class="c-modal--toggle__menu-item">
+      <a class="c-modal--toggle__menu-link o-font-f1-main" href="">Inicio</a>
     </li>
-    <li class="c-modal__menu-item">
-      <a class="c-modal__menu-link o-font-f1-main" href="">Categorías</a>
+    <li class="c-modal--toggle__menu-item">
+      <a class="c-modal--toggle__menu-link o-font-f1-main" href="">Categorías</a>
     </li>
   </ul>
 
   <app-button
     [typeButton]="typeButton"
-    [description]="'Cerrrar menú'"
+    [description]="'Cerrar menú'"
     (click)="onToggle($event)"></app-button>
 </div>
+
+<div class="c-modal c-modal--search {{ activeModalSearch }}">
+  <div class="c-modal--search__content">
+    <p class="o-font-f1-section">Busca en nuestra tienda</p>
+    <app-bar-search></app-bar-search>                                                    
+  </div>
+  <app-button
+    [typeButton]="typeButton"
+    [description]="'Cerrar menú'"
+    (click)="onSearch($event)"></app-button>
+</div>
+
+<div class="c-modal c-modal--shop  {{ activeModalShop }}">
+    <div class="c-modal--shop__head">
+      <h2 class="c-modal--shop__title o-font-f1-main">Shopping Cart</h2>
+      <svg-icon
+      src="/assets/icons/close.svg"
+      [class]="'c-modal--shop__icon o-icon-size-sm'"
+      [applyClass]="true"
+      (click)="onShop($event)">
+    </svg-icon>
+    </div>
+    <div class="c-modal--shop__body">
+      <img class="c-modal--shop__image"src="/assets/images/empty-cart.png" alt="">
+      <h3 class="c-modal--shop__subtitle o-font-f1-subtitle">Tu carrito está vacio :(</h3>
+      <p class="c-modal--shop__paragraph o-font-f1-section">Puedes consultar todos los productos disponibles y comprar algunos en la tienda</p>
+      <app-button
+      [typeButton]="typeButton"
+      [description]="'Volver a comprar'"
+      (click)="onShop($event)"></app-button>
+    </div>
+</div> 
